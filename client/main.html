@@ -1,0 +1,33 @@
+<head>
+  <title>projetjs</title>
+</head>
+
+<body>
+  <h1>Bienvenue sur je me marre!</h1>
+  
+  {{> blagues }}
+
+  
+</body>
+<!--Formulaire-->
+<template name="blagues">
+    <ul>
+       {{#each all_blagues}}
+        <li> <strong>{{title}}</strong> : {{content}} <button id="remove_blague">Elle est nulle!</button> <button id="update_blague">Peut mieux faire!</button></li>
+        {{/each}}
+    </ul>
+    
+    <hr/>
+    <div id="form">
+        <h3>Ajoutez une nouvelle blague</h3>
+        <input id="title" type="text" placeholder="Titre">
+        <textarea id="content" type="text" placeholder="La blague"></textarea>
+        <button id="submit_blague">Faites nous rire!</button>
+    </div>
+</template>
+
+  <template name="App_body">
+  ...
+  {{> Template.dynamic template=main}}
+  ...
+</template>

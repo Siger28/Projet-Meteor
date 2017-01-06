@@ -1,0 +1,1 @@
+blagues = new Mongo.Collection( "blagues" );
